@@ -3,21 +3,27 @@ package com.skillIndia.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 //import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Candidate implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int UserId;
 	private String candidateName;//Name of the Candidate
 	private String FatherName;//Candidate father name
-	private String address;//XCandidate's Address
+	//private String address;//XCandidate's Address
 	private String Gender;//gender of the user
 	private String EmailId;//Candidate's EmailId
 	private String contact;//contact number of the user
@@ -27,6 +33,32 @@ public class Candidate implements Serializable{
 	private String confirmPassword;
 	private Date dob;//Candidate's DOB
 	
+	@OneToOne(cascade=CascadeType.ALL)
+	private BankDetails bankDetails;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	private Address address;
+	
+	public Address getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+
+	public BankDetails getBankDetails() {
+		return bankDetails;
+	}
+
+
+	public void setBankDetails(BankDetails bankDetails) {
+		this.bankDetails = bankDetails;
+	}
+
+
 	public int getUserId() {
 		return UserId;
 	}
@@ -79,14 +111,30 @@ public class Candidate implements Serializable{
 
 	
 
-	public Candidate(int userId, String candidateName, String fatherName, String address, String gender, String emailId,
-			String contact, String aadhaarNumber, String educationalDetails, String newPassword, String confirmPassword,
-			Date dob) {
+	
+
+	public String getFatherName() {
+		return FatherName;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Candidate [UserId=" + UserId + ", candidateName=" + candidateName + ", FatherName=" + FatherName
+				+ ", Gender=" + Gender + ", EmailId=" + EmailId + ", contact=" + contact + ", aadhaarNumber="
+				+ aadhaarNumber + ", EducationalDetails=" + EducationalDetails + ", newPassword=" + newPassword
+				+ ", confirmPassword=" + confirmPassword + ", dob=" + dob + ", address=" + address + ", bankDetails="
+				+ bankDetails + "]";
+	}
+
+
+	public Candidate(int userId, String candidateName, String fatherName, String gender, String emailId, String contact,
+			String aadhaarNumber, String educationalDetails, String newPassword, String confirmPassword, Date dob,
+			Address address, BankDetails bankDetails) {
 		super();
 		UserId = userId;
 		this.candidateName = candidateName;
 		FatherName = fatherName;
-		this.address = address;
 		Gender = gender;
 		EmailId = emailId;
 		this.contact = contact;
@@ -95,28 +143,14 @@ public class Candidate implements Serializable{
 		this.newPassword = newPassword;
 		this.confirmPassword = confirmPassword;
 		this.dob = dob;
-	}
-
-
-	public String getFatherName() {
-		return FatherName;
+		this.address = address;
+		this.bankDetails = bankDetails;
 	}
 
 
 	public void setFatherName(String fatherName) {
 		FatherName = fatherName;
 	}
-
-
-	public String getAddress() {
-		return address;
-	}
-
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 
 	public String getEmailId() {
 		return EmailId;
@@ -140,15 +174,6 @@ public class Candidate implements Serializable{
 
 	public void setUserId(int userId) {
 		UserId = userId;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Candidate [UserId=" + UserId + ", candidateName=" + candidateName + ", FatherName=" + FatherName
-				+ ", address=" + address + ", Gender=" + Gender + ", EmailId=" + EmailId + ", contact=" + contact
-				+ ", aadhaarNumber=" + aadhaarNumber + ", EducationalDetails=" + EducationalDetails + ", newPassword="
-				+ newPassword + ", confirmPassword=" + confirmPassword + ", dob=" + dob + "]";
 	}
 
 

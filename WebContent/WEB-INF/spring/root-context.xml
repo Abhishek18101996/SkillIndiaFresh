@@ -33,6 +33,8 @@
 				<value>com.skillIndia.dao.CandidateDao</value>
 				<value>com.skillIndia.dao.CandidateDaoImpl</value>
 				<value>com.skillIndia.model.Candidate</value>
+				<value>com.skillIndia.model.Address</value>
+				<value>com.skillIndia.model.BankDetails</value>
 				<value>com.skillIndia.service.CandidateService</value>
 				<value>com.skillIndia.service.CandidateServiceImpl</value>
 			</list>
@@ -42,7 +44,7 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect
 				</prop>
 
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>

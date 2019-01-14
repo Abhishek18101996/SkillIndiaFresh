@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" 
+
+prefix="c" %>
+
+<%@ taglib uri="http://www.springframework.org/tags" 
+
+prefix="spring" %>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" 
+
+prefix="form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -45,39 +56,80 @@
 	</div>
 
 
-<form method="post" action="Login" modelAttribute="candidate">
+<form:form method="post" action="Login" modelAttribute="candidate">
 
 		<div class="row">
 			<div class="col-md-4 form-group">
-				<label for="name">Full Name:</label> <input type="text" required
-					placeholder="First Name - Last Name" name="candidateName"
-					class="form-control input-sm modify" id="name">
+				<form:label path="candidateName">Full Name:</form:label> <form:input type="text" required=""
+					placeholder="First Name - Last Name" path="candidateName"
+					class="form-control input-sm modify" id="candidateName"/>
 			</div>
 			<div class="col-md-4 form-group">
-				<label for="fname">Father's Name :</label> <input type="text"
-					name="FatherName" required class="form-control modify" id="fname">
+				<form:label path="FatherName">Father's Name :</form:label> <form:input type="text"
+					path="FatherName" required="" class="form-control modify" id="FatherName"/>
 			</div>
 
 			<div class="col-md-4 form-group">
-				<label for="gender">Gender :</label> <input type="gender"
-					name="Gender" required class="form-control modify" id="Gender">
+				<form:label path="Gender">Gender :</form:label> <form:input type="Gender"
+					path="Gender" required="" class="form-control modify" id="Gender"/>
 			</div>
 		</div>
 
 
 		<div class="row">
 			<div class="col-md-4 form-group">
-				<label for="pwd">Password :</label> <input type="password" required
-					name="newPassword" class="form-control modify" id="newPassword">
+				<form:label path="newPassword">Password :</form:label> <form:input type="password" required=""
+					path="newPassword" class="form-control modify" id="newPassword"/>
+			</div>
+			
+			<div class="col-md-4 form-group">
+			Address :
+			<!--  
+			<form:label path="address.addressId">
+			<spring:message text="Address ID"/>
+			</form:label>
+		<form:input path="address.addressId" readonly="true" 
+			size="10"  disabled="true" />
+			<form:hidden path="address.addressId" />	<br/>
+			-->
+				<form:label path="address.house_no">Address :
+				<spring:message text ="house_no"></spring:message>
+			</form:label>
+			<form:input path="address.house_no"/><br/>
+			
+			<form:label path="address.street">Address :
+				<spring:message text ="street"></spring:message>
+			</form:label>
+			<form:input path="address.street"/><br/>
+			
+			<form:label path="address.city">Address :
+				<spring:message text ="city"></spring:message>
+			</form:label>
+			<form:input path="address.city"/><br/>
+			
+			<form:label path="address.district">Address :
+				<spring:message text ="district"></spring:message>
+			</form:label>
+			<form:input path="address.district"/><br/>
+			
+			<form:label path="address.state">Address :
+				<spring:message text ="state"></spring:message>
+			</form:label>
+			<form:input path="address.state"/><br/>
+			
+			<form:label path="address.country">Address :
+				<spring:message text ="country"></spring:message>
+			</form:label>
+			<form:input path="address.country"/><br/>
+			
+			<form:label path="address.pincode">Address :
+				<spring:message text ="pincode"></spring:message>
+			</form:label>
+			<form:input path="address.pincode"/><br/>
 			</div>
 			<div class="col-md-4 form-group">
-				<label for="address">Address :</label>
-				<textarea class="form-control" rows="2" id="address" name="address"></textarea>
-
-			</div>
-			<div class="col-md-4 form-group">
-				<label for="email">Email Id :</label> <input type="email" required
-					name="EmailId" class="form-control modify" id="EmailId">
+				<form:label path="EmailId">Email Id :</form:label> <form:input type="email" required=""
+					path="EmailId" class="form-control modify" id="EmailId"/>
 
 			</div>
 		</div>
@@ -86,27 +138,27 @@
 
 		<div class="row">
 			<div class="col-md-4 form-group">
-				<label for="cpwd">Confirm Password :</label> <input type="password"
-					name="confirmPassword" required class="form-control modify"
-					id="confirmPassword">
+				<form:label path="confirmPassword">Confirm Password :</form:label> <form:input type="password"
+					path="confirmPassword" required="" class="form-control modify"
+					id="confirmPassword"/>
 			</div>
 
 			<div class="col-md-4 form-group">
-				<label for="date">Date of Birth :</label> <input type="date"
-					class="form-control " id="dob">
+				<form:label path="dob">Date of Birth :</form:label> <form:input type="date" path="dob"
+					class="form-control " id="dob"/>
 			</div>
 			<div class="col-md-4 form-group">
-				<label for="aadhar">Aadhar No :</label> <input type="number"
-					required class="form-control modify" name="aadhar" id="aadharno">
+				<form:label path="aadhaarNumber">Aadhar No :</form:label> <form:input type="number"
+					required="" class="form-control modify" path="aadhaarNumber" id="aadhaarNumber"/>
 			</div>
 
 		</div>
 
 		<div class="row">
 			<div class="col-md-4 form-group">
-				<label for="degree">Education Details :</label> <select
-					class="custom-select d-block w-100" name="EducationalDetails" id="EducationalDetails"
-					required>
+				<form:label path="degree">Education Details :</form:label> <select
+					class="custom-select d-block w-100" path="EducationalDetails" id="EducationalDetails"
+					required="">
 					<option value="">Choose...</option>
 					<option>BE/B.Tech</option>
 					<option>BCA</option>
@@ -116,9 +168,32 @@
 			</div>
 
 			<div class="col-md-4 form-group">
-				<label for="pic">Upload Profile Picture :</label> <input
-					type="button" required class="form-control btn btn-success modify"
-					value="Upload" id="pic">
+			Address :
+				<form:label path="bankDetails.bankName">Address :
+				<spring:message text ="bankName"></spring:message>
+			</form:label>
+			<form:input path="bankDetails.bankName"/><br/>
+			
+			<form:label path="bankDetails.bankBranch">Address :
+				<spring:message text ="bankBranch"></spring:message>
+			</form:label>
+			<form:input path="bankDetails.bankBranch"/><br/>
+			
+			<form:label path="bankDetails.bankIFSC">Address :
+				<spring:message text ="bankIFSC"></spring:message>
+			</form:label>
+			<form:input path="bankDetails.bankIFSC"/><br/>
+			
+			<form:label path="bankDetails.accountNumber">Address :
+				<spring:message text ="accountNumber"></spring:message>
+			</form:label>
+			<form:input path="bankDetails.accountNumber"/><br/>
+			</div>
+
+			<div class="col-md-4 form-group">
+				<form:label path="">Upload Profile Picture :</form:label> <form:input
+					type="button" path="" required="" class="form-control btn btn-success modify"
+					value="Upload" id="pic"/>
 			</div>
 
 		</div>
@@ -132,6 +207,6 @@
 		</div>
 
 
-	</form>
+	</form:form>
 	</body>
 </html>

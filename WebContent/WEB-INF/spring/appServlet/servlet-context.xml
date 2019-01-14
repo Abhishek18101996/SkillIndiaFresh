@@ -14,7 +14,10 @@
 	<!-- Configuring Validators i.e. LocalValidatorFactoryBean -->
 	<beans:bean id="validator"
 		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
-	<context:component-scan base-package="com.skillIndia.*" />
+	<context:component-scan base-package="com.skillIndia.controller" />
+	<context:component-scan base-package="com.skillIndia.dao" />
+	<context:component-scan base-package="com.skillIndia.model" />
+	<context:component-scan base-package="com.skillIndia.service" />
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
