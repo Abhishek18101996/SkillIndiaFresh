@@ -21,4 +21,9 @@ public class CandidateServiceImpl implements CandidateService{
 		candidateDaoObject.addCandidate(candidate);
 	}
 
+	@Override
+	public boolean verifyCandidate(String candidateUsername, String candidatePassword) {
+		return candidateDaoObject.verifyCandidate(candidateUsername, candidatePassword);
+	}
+
 }

@@ -44,4 +44,15 @@ public class CandidateController {
 		}
 	}
 	
+	@RequestMapping(value="/CandidateDashboard",method=RequestMethod.POST)
+	public String validateCandidateLogin(@Valid @ModelAttribute("candidate") Candidate candidate,
+			BindingResult bindingResult, Model model, HttpServletRequest request) {
+		String candidateUserId = request.getParameter("username");
+		String candidatePassword = request.getParameter("password");
+		if(candidateServiceObject.verifyCandidate(candidateUserId, candidatePassword)) {
+		return "CandidateDashboard";
+	}
+		return "error";
+	
+}
 }

@@ -43,7 +43,7 @@
 
 	<div class="container">
 
-		<form class="form" action="/action_page.php">
+		<form class="form" action="CandidateDashboard" method="post">
 			<h2 class="text-danger">Log-In Form</h2>
 			<br> <img src="HTML/student.png" width="120" height="120"
 				alt="Log In">
