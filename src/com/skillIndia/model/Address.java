@@ -50,10 +50,6 @@ private String city;
 @Column
 private String state;
 
-
-
-
-
 public int getAddressId() {
 	return addressId;
 }

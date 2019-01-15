@@ -2,9 +2,12 @@ package com.skillIndia.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Course implements Serializable{
@@ -20,6 +23,19 @@ public class Course implements Serializable{
 	private String courseDescription;
 	private int courseDuration;
 	
+	/*@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="establishmentId")*/
+	private Establishment establishment;
+	
+	
+	public Establishment getEstablishment() {
+		return establishment;
+	}
+
+	public void setEstablishment(Establishment establishment) {
+		this.establishment = establishment;
+	}
+
 	//SuperClass Constructor
 	public Course() {
 		super();

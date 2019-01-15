@@ -25,6 +25,12 @@ public class BankDetails implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "BankDetails [bankName=" + bankName + ", bankBranch=" + bankBranch + ", bankIFSC=" + bankIFSC
+				+ ", accountNumber=" + accountNumber + "]";
+	}
+
 	//parameterized constructor
 	public BankDetails(String bankName, String bankBranch, String bankIFSC, String accountNumber) {
 		super();

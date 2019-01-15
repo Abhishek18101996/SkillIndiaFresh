@@ -36,6 +36,7 @@
 				<value>com.skillIndia.model.Address</value>
 				<value>com.skillIndia.model.BankDetails</value>
 				<value>com.skillIndia.model.Course</value>
+				<value>com.skillIndia.model.Establishment</value>
 				<value>com.skillIndia.service.CandidateService</value>
 				<value>com.skillIndia.service.CandidateServiceImpl</value>
 			</list>

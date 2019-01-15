@@ -22,7 +22,7 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
 	integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="CSS/LoginForm.css">
+<!-- <link rel="stylesheet" href="CSS/LoginForm.css"> -->
 
 
 </head>
@@ -43,10 +43,9 @@
 
 	<div class="container">
 
-		<form class="form" action="CandidateDashboard" method="post">
+		<form class="form" action="EstablishmentDashboard" method="post">
 			<h2 class="text-danger">Log-In Form</h2>
-			<br> <img src="HTML/student.png" width="120" height="120"
-				alt="Log In">
+			<!-- <br> <img src="HTML/student.png" width="120" height="120" alt="Log In"> -->
 
 
 			<div id="username" class="form-group">

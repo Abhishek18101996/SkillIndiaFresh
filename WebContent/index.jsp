@@ -21,7 +21,7 @@
 				data-toggle="dropdown" href="#">Registration <span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="CandidateRegistration">Candidate Registration</a></li>
-					<li><a href="establishment/add">Establishment Registration</a></li>
+					<li><a href="EstablishmentRegistration">Establishment Registration</a></li>
 					<li><a href="#">Officer Registration</a></li>
 				</ul></li>
 
@@ -29,7 +29,7 @@
 				data-toggle="dropdown" href="#">Login <span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="#">Candidate Login</a></li>
-					<li><a href="#">Establishment Login</a></li>
+					<li><a href="">Establishment Login</a></li>
 					<li><a href="#">Officer Login</a></li>
 				</ul></li>
 
