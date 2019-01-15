@@ -56,7 +56,7 @@ prefix="form" %>
 	</div>
 
 
-<form:form method="post" action="Login" modelAttribute="candidate">
+<form:form method="post" action="CandidateLogin" modelAttribute="candidate">
 
 		<div class="row">
 			<div class="col-md-4 form-group">

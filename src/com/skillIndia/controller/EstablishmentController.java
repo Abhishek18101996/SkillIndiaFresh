@@ -32,12 +32,12 @@ public class EstablishmentController {
 		return "EstablishmentRegistration";
 	}
 	
-	@RequestMapping(value="/EstablishmentLogin",method=RequestMethod.POST)
+	@RequestMapping(value="/EstablishmentLogin",method=RequestMethod.GET)
 	public String validateEstablishmentRegistration(@ Valid @ModelAttribute("establishment") Establishment establishment,
 			BindingResult result, Model model, HttpServletRequest request) {
 		establishmentServiceObject.addEstablishment(establishment);
 			System.out.println(establishment);
-			return "login";
+			return "EstablishmentLogin";
 	}
 	
 	@RequestMapping(value="/EstablishmentDashboard",method=RequestMethod.POST)

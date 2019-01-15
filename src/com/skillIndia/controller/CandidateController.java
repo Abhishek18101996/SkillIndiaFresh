@@ -34,12 +34,12 @@ public class CandidateController {
 		return "CandidateRegistration";
 	}
 	
-	@RequestMapping(value="/Login",method=RequestMethod.POST)
+	@RequestMapping(value="/CandidateLogin",method=RequestMethod.GET)
 	public String validateCandidateRegistration(@ Valid @ModelAttribute("candidate") Candidate candidate,
 			BindingResult result, Model model, HttpServletRequest request) {
 			candidateServiceObject.addCandidate(candidate);
 			System.out.println(candidate);
-			return "login";
+			return "CandidateLogin";
 	}
 	
 	@RequestMapping(value="/CandidateDashboard",method=RequestMethod.POST)
