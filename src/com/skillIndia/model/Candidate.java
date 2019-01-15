@@ -39,6 +39,18 @@ public class Candidate implements Serializable{
 	@OneToOne(cascade=CascadeType.ALL)
 	private Address address;
 	
+	@OneToOne(cascade=CascadeType.ALL)
+	private Course course;
+	
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+
 	public Address getAddress() {
 		return address;
 	}
@@ -48,7 +60,7 @@ public class Candidate implements Serializable{
 		this.address = address;
 	}
 
-
+	
 	public BankDetails getBankDetails() {
 		return bankDetails;
 	}

@@ -20,6 +20,11 @@ public class BankDetails implements Serializable {
 	private String bankIFSC;//IFSC code of the bank
 	private String accountNumber;//Account Number of the user
 	
+	public BankDetails() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	//parameterized constructor
 	public BankDetails(String bankName, String bankBranch, String bankIFSC, String accountNumber) {
 		super();

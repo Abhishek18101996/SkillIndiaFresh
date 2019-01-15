@@ -1,118 +1,129 @@
 package com.skillIndia.model;
 
+
+
 import java.io.Serializable;
 
+
+
+
+
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
+
 import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 
 
-//Every user who is registering with the organisation will have a Address
+
+import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.stereotype.Component;
+
+
+
+@Component
+
 @Entity
-public class Address implements Serializable{
 
-	
-	//Declarations
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Address implements Serializable {
+
 	@Id
-	@Column(name="house_no")
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int AddressId;//in order to map the database table with other entities a primary key
-	
-	private String house_no;
-	private String street,city,district,state,country;//Various address fields
-	private int pincode;
-	
-	
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="address_sequence")
+	@SequenceGenerator(name="address_sequence",sequenceName="address_sequence")
+	@Column
+	private int addressId;
 
-	public int getAddressId() {
-		return AddressId;
-	}
+@Column
+@NotEmpty(message = "Address cannot be empty")
+private String localAddress;
 
-	public void setAddressId(int addressId) {
-		AddressId = addressId;
-	}
-	//parameterized constructor
-	
+@Column
+@NotEmpty(message = "City cannot be empty!")
+private String city;
 
-	public String getHouse_no() {
-		return house_no;
-	}
+@Column
+private String state;
 
-	public Address(String house_no, String street, String city, String district, String state, String country,
-		int pincode) {
-	super();
-	this.house_no = house_no;
-	this.street = street;
-	this.city = city;
-	this.district = district;
-	this.state = state;
-	this.country = country;
-	this.pincode = pincode;
+
+
+
+
+public int getAddressId() {
+	return addressId;
 }
 
-	@Override
-	public String toString() {
-		return "Address [house_no=" + house_no + ", street=" + street + ", city=" + city + ", district=" + district
-				+ ", state=" + state + ", country=" + country + ", pincode=" + pincode + "]";
-	}
 
-	public void setHouse_no(String house_no) {
-		this.house_no = house_no;
-	}
 
-	public String getStreet() {
-		return street;
-	}
+public void setAddressId(int addressId) {
+	this.addressId = addressId;
+}
 
-	public void setStreet(String street) {
-		this.street = street;
-	}
 
-	public String getCity() {
-		return city;
-	}
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+public String getLocalAddress() {
+	return localAddress;
+}
 
-	public String getDistrict() {
-		return district;
-	}
 
-	public void setDistrict(String district) {
-		this.district = district;
-	}
 
-	public String getState() {
-		return state;
-	}
+public void setLocalAddress(String localAddress) {
+	this.localAddress = localAddress;
+}
 
-	public void setState(String state) {
-		this.state = state;
-	}
 
-	public String getCountry() {
-		return country;
-	}
 
-	public void setCountry(String country) {
-		this.country = country;
-	}
+public String getCity() {
+	return city;
+}
 
-	public int getPincode() {
-		return pincode;
-	}
 
-	public void setPincode(int pincode) {
-		this.pincode = pincode;
-	}
-	
+
+public void setCity(String city) {
+	this.city = city;
+}
+
+
+
+
+
+public String getState() {
+	return state;
+}
+
+
+
+public void setState(String state) {
+	this.state = state;
+}
+
+
+
+@Override
+
+public String toString() {
+	return "Address [addressId=" + addressId + ", localAddress=" + localAddress + ", city=" + city + ", state=" + state
+			+ "]";
+}
+
+
+
+public Address(String localAddress, String city, String state) {
+	super();
+	this.localAddress = localAddress;
+	this.city = city;
+	this.state=state;
+}
+
+
+
+public Address() {
+	super();
+}
+
 }

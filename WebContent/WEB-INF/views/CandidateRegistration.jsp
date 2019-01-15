@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+`<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" 
 
@@ -37,8 +37,8 @@ prefix="form" %>
 	crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="CSS/Student_Registration.css" />
-
+<!--<link rel="stylesheet" href="CSS/Student_Registration.css" />
+-->
 </head>
 <body>
 <div class="jumbotron text-center">
@@ -84,48 +84,27 @@ prefix="form" %>
 			
 			<div class="col-md-4 form-group">
 			Address :
-			<!--  
-			<form:label path="address.addressId">
-			<spring:message text="Address ID"/>
+		  
+			<form:label path="address.localAddress">
+				<spring:message text="Local Adress"/>
 			</form:label>
-		<form:input path="address.addressId" readonly="true" 
-			size="10"  disabled="true" />
-			<form:hidden path="address.addressId" />	<br/>
-			-->
-				<form:label path="address.house_no">Address :
-				<spring:message text ="house_no"></spring:message>
+		 <form:input path="address.localAddress"  />
+			 	  <br/>
+
+	<br/>
+			<form:label path="address.city">
+				<spring:message text="City"/>
 			</form:label>
-			<form:input path="address.house_no"/><br/>
-			
-			<form:label path="address.street">Address :
-				<spring:message text ="street"></spring:message>
+		 <form:input path="address.city"  />
+		 	 	  <br/>
+	<br/>
+
+			<form:label path="address.state">
+				<spring:message text="State"/>
 			</form:label>
-			<form:input path="address.street"/><br/>
-			
-			<form:label path="address.city">Address :
-				<spring:message text ="city"></spring:message>
-			</form:label>
-			<form:input path="address.city"/><br/>
-			
-			<form:label path="address.district">Address :
-				<spring:message text ="district"></spring:message>
-			</form:label>
-			<form:input path="address.district"/><br/>
-			
-			<form:label path="address.state">Address :
-				<spring:message text ="state"></spring:message>
-			</form:label>
-			<form:input path="address.state"/><br/>
-			
-			<form:label path="address.country">Address :
-				<spring:message text ="country"></spring:message>
-			</form:label>
-			<form:input path="address.country"/><br/>
-			
-			<form:label path="address.pincode">Address :
-				<spring:message text ="pincode"></spring:message>
-			</form:label>
-			<form:input path="address.pincode"/><br/>
+
+		 <form:input path="address.state"  />
+ 	  <br/>
 			</div>
 			<div class="col-md-4 form-group">
 				<form:label path="EmailId">Email Id :</form:label> <form:input type="email" required=""
@@ -156,7 +135,7 @@ prefix="form" %>
 
 		<div class="row">
 			<div class="col-md-4 form-group">
-				<form:label path="degree">Education Details :</form:label> <select
+				<form:label path="EducationalDetails">Education Details :</form:label> <select
 					class="custom-select d-block w-100" path="EducationalDetails" id="EducationalDetails"
 					required="">
 					<option value="">Choose...</option>
