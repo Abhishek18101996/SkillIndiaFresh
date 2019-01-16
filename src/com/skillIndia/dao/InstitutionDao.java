@@ -1,7 +1,10 @@
 package com.skillIndia.dao;
 
+import org.springframework.stereotype.Repository;
+
 import com.skillIndia.model.Institution;
 
+@Repository
 public interface InstitutionDao {
 
 	public void addInstitution(Institution p);//insert

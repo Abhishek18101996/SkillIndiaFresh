@@ -75,8 +75,16 @@
 
     <div>
 
-        <h3>Welcome, Candidate ! &nbsp; &nbsp; <button>Logout</button>
-          
+        <h3>Welcome, Candidate ! &nbsp; &nbsp;
+        Candidate:
+        <%=session.getAttribute("candidate") %>
+        Username:
+        <%=session.getAttribute("EmailId")%>
+        
+         Password:
+        <%=session.getAttribute("NewPassword")%>   
+         <button>Logout</button>
+       
             &nbsp; &nbsp; <button href="#">Browse Course</button>
 
 

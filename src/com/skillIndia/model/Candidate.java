@@ -1,7 +1,7 @@
 package com.skillIndia.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.CascadeType;
 //import javax.persistence.Column;
@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -35,6 +37,10 @@ public class Candidate implements Serializable{
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private BankDetails bankDetails;
+	
+	@ManyToOne
+	@JoinColumn(name="estId")
+	private Establishment establishment;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private Address address;

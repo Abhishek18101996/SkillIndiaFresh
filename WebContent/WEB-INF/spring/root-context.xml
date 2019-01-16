@@ -37,6 +37,7 @@
 				<value>com.skillIndia.model.BankDetails</value>
 				<value>com.skillIndia.model.Course</value>
 				<value>com.skillIndia.model.Establishment</value>
+				<value>com.skillIndia.model.Institution</value>
 				<value>com.skillIndia.service.CandidateService</value>
 				<value>com.skillIndia.service.CandidateServiceImpl</value>
 			</list>
@@ -46,7 +47,7 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect
 				</prop>
 
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>

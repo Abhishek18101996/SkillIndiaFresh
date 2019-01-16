@@ -26,4 +26,10 @@ public class CandidateServiceImpl implements CandidateService{
 		return candidateDaoObject.verifyCandidate(candidateUsername, candidatePassword);
 	}
 
+	@Override
+	public Candidate returnCandidate(Candidate candidate) {	
+		System.out.println("in service returnCandidate()");
+		return candidateDaoObject.returnCandidate(candidate);
+	}
+
 }

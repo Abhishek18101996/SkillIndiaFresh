@@ -9,4 +9,5 @@ public interface CandidateService {
 
 	public void addCandidate(Candidate candidate);
 	public boolean verifyCandidate(String candidateUsername, String candidatePassword);
+	public Candidate returnCandidate(Candidate candidate);
 }

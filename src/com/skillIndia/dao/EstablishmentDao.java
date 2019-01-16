@@ -13,6 +13,7 @@ public interface EstablishmentDao {
 
 	public void addEstablishment(Establishment p);//insert
 	public void updateEstablishment(Establishment p);//update/modify
+	public Establishment returnEstablishment(Establishment establishment);
 	public void removeEstablishmentByName(String name);//delete/remove
 	public void addCourse(Course establishmentCourse);//Establishment adds courses available with its organisation
 	public void evaluateCandidate(Candidate candidateProgress);//Establishment evaluates candidate based on its behaviour and performance during course

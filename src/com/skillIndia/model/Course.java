@@ -1,12 +1,16 @@
 package com.skillIndia.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -23,16 +27,20 @@ public class Course implements Serializable{
 	private String courseDescription;
 	private int courseDuration;
 	
-	/*@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="establishmentId")*/
-	private Establishment establishment;
+	@ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                CascadeType.PERSIST,
+                CascadeType.MERGE
+            },
+            mappedBy = "courseList")
+    private Set<Establishment> establishment = new HashSet<>();
 	
-	
-	public Establishment getEstablishment() {
+
+	public Set<Establishment> getEstablishment() {
 		return establishment;
 	}
 
-	public void setEstablishment(Establishment establishment) {
+	public void setEstablishment(Set<Establishment> establishment) {
 		this.establishment = establishment;
 	}
 

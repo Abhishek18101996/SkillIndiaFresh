@@ -1,8 +1,11 @@
 package com.skillIndia.service;
 
+import org.springframework.stereotype.Service;
+
 import com.skillIndia.dao.InstitutionDao;
 import com.skillIndia.model.Institution;
 
+@Service
 public class InstitutionServiceImpl implements InstitutionService {
 
 	private InstitutionDao institutedao;

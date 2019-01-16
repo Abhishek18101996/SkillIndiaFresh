@@ -58,7 +58,7 @@
 
 				<ul class="dropdown-menu">
 
-					<li><a href="CandidateLogin">Candidate Login</a></li>
+					<li><a href="candidatelogin">Candidate Login</a></li>
 
 					<li><a href="EstablishmentLogin">Establishment Login</a></li>
 

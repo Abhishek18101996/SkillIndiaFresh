@@ -1,6 +1,7 @@
 package com.skillIndia.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +33,19 @@ public class EstablishmentController {
 		return "EstablishmentRegistration";
 	}
 	
-	@RequestMapping(value="/EstablishmentLogin",method=RequestMethod.GET)
+	@RequestMapping(value="/EstablishmentLogin",method=RequestMethod.POST)
 	public String validateEstablishmentRegistration(@ Valid @ModelAttribute("establishment") Establishment establishment,
 			BindingResult result, Model model, HttpServletRequest request) {
 		establishmentServiceObject.addEstablishment(establishment);
 			System.out.println(establishment);
 			return "EstablishmentLogin";
+	}
+	
+	@RequestMapping(value = "/establishmentlogin")
+	public String LoginPage(Model model,HttpSession session) {
+		
+		model.addAttribute("establishment", new Establishment());
+		return "EstablishmentLogin";
 	}
 	
 	@RequestMapping(value="/EstablishmentDashboard",method=RequestMethod.POST)
